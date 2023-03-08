@@ -35,6 +35,7 @@ $(window).resize(function() {
 
 function timeElapse(date){
 	const d = new Date("2022-05-21");
+	d.setTime( d.getTime() + d.getTimezoneOffset()*60*1000 );
 	var current = Date();
 	var seconds = (Date.parse(current) - Date.parse(d)) / 1000;
 	var days = Math.floor(seconds / (3600 * 24));
